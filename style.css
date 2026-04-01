@@ -480,3 +480,13 @@ button{cursor:pointer;border:none;background:none;font:inherit}
   display: block;
   font-size: 14px;
 }
+.skill-icon-img {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 10px;
+  filter: invert(1); /* makes it white for dark theme */
+}
+
+.skill-card i.fa-react {
+  color: #61dafb;
+}
