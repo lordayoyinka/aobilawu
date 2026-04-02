@@ -61,24 +61,123 @@ if (skillsCol) {
 }
 
 // ── Portfolio filter ──────────────────────────────────────────
-const filterBtns = document.querySelectorAll('.filter-btn');
-const workCards  = document.querySelectorAll('.work-card');
-
-filterBtns.forEach(btn => {
+document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.dataset.filter;
-    workCards.forEach(card => {
+    document.querySelectorAll('.work-card').forEach(card => {
       const match = filter === 'all' || card.dataset.category === filter;
-      if (match) {
-        card.classList.remove('hidden');
-        card.style.animation = 'fadeUp 0.4s ease both';
-      } else {
-        card.classList.add('hidden');
-      }
+      card.classList.toggle('hidden', !match);
+      if (match) card.style.animation = 'fadeUp 0.4s ease both';
     });
+    buildLightboxIndex();
   });
+});
+
+// ── Lightbox ──────────────────────────────────────────────────
+const lightbox        = document.getElementById('lightbox');
+const lightboxImg     = document.getElementById('lightboxImg');
+const lightboxTitle   = document.getElementById('lightboxTitle');
+const lightboxDesc    = document.getElementById('lightboxDesc');
+const lightboxCounter = document.getElementById('lightboxCounter');
+const lightboxThumbs  = document.getElementById('lightboxThumbs');
+const lightboxLoader  = document.getElementById('lightboxLoader');
+
+let lightboxItems = [];
+let currentIndex  = 0;
+
+function buildLightboxIndex() {
+  lightboxItems = Array.from(document.querySelectorAll('.work-card:not(.hidden)'));
+}
+buildLightboxIndex();
+
+function openLightbox(index) {
+  currentIndex = ((index % lightboxItems.length) + lightboxItems.length) % lightboxItems.length;
+  renderLightbox();
+  buildThumbs();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function renderLightbox() {
+  const card = lightboxItems[currentIndex];
+  lightboxLoader.classList.remove('hidden');
+  lightboxImg.classList.remove('loaded');
+  lightboxImg.src = '';
+  lightboxTitle.innerHTML  = card.dataset.title;
+  lightboxDesc.innerHTML   = card.dataset.desc;
+  lightboxCounter.textContent = `${currentIndex + 1} / ${lightboxItems.length}`;
+
+  const tmp = new Image();
+  tmp.onload = () => {
+    lightboxImg.src = card.dataset.img;
+    lightboxImg.alt = card.dataset.title;
+    lightboxImg.classList.add('loaded');
+    lightboxLoader.classList.add('hidden');
+  };
+  tmp.onerror = () => {
+    lightboxImg.src = card.dataset.img;
+    lightboxImg.classList.add('loaded');
+    lightboxLoader.classList.add('hidden');
+  };
+  tmp.src = card.dataset.img;
+
+  document.querySelectorAll('.lightbox__thumb').forEach((t, i) => {
+    t.classList.toggle('active', i === currentIndex);
+    if (i === currentIndex) t.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  });
+}
+
+function buildThumbs() {
+  lightboxThumbs.innerHTML = '';
+  lightboxItems.forEach((card, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'lightbox__thumb' + (i === currentIndex ? ' active' : '');
+    btn.innerHTML = `<img src="${card.dataset.img}" alt="${card.dataset.title}" loading="lazy">`;
+    btn.addEventListener('click', () => { currentIndex = i; renderLightbox(); });
+    lightboxThumbs.appendChild(btn);
+  });
+}
+
+// Open on card click
+document.querySelectorAll('.work-card').forEach(card => {
+  card.addEventListener('click', () => {
+    buildLightboxIndex();
+    openLightbox(lightboxItems.indexOf(card));
+  });
+});
+
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxBackdrop').addEventListener('click', closeLightbox);
+document.getElementById('lightboxCta').addEventListener('click', closeLightbox);
+document.getElementById('lightboxPrev').addEventListener('click', e => { e.stopPropagation(); currentIndex = (currentIndex - 1 + lightboxItems.length) % lightboxItems.length; renderLightbox(); });
+document.getElementById('lightboxNext').addEventListener('click', e => { e.stopPropagation(); currentIndex = (currentIndex + 1) % lightboxItems.length; renderLightbox(); });
+
+// Keyboard
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % lightboxItems.length; renderLightbox(); }
+  if (e.key === 'ArrowLeft')  { currentIndex = (currentIndex - 1 + lightboxItems.length) % lightboxItems.length; renderLightbox(); }
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// Touch swipe
+let touchStartX = 0;
+lightbox.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+lightbox.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) {
+    currentIndex = diff > 0
+      ? (currentIndex + 1) % lightboxItems.length
+      : (currentIndex - 1 + lightboxItems.length) % lightboxItems.length;
+    renderLightbox();
+  }
 });
 
 // ── Contact form ──────────────────────────────────────────────
