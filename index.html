@@ -361,78 +361,170 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section class="work section" id="work">
-    <div class="container">
-      <div class="section-label">Portfolio</div>
-      <h2 class="section-title">Selected <em>Work</em></h2>
-      <p class="section-sub">Real projects. Real results. A selection of what I've built for clients.</p>
-      <div class="work__filters">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="design">Web Design</button>
-         <button class="filter-btn" data-filter="graphics">Graphics Design</button>
-        <button class="filter-btn" data-filter="solutions">Solutions</button>
+
+ <!-- PORTFOLIO -->
+<section class="work section" id="work">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Selected <em>Work</em></h2>
+    <p class="section-sub">Real projects. Real results. Click any project to preview it in full size.</p>
+    <div class="work__filters">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="design">Web Design</button>
+      <button class="filter-btn" data-filter="graphics">Graphics Design</button>
+      <button class="filter-btn" data-filter="solutions">Solutions</button>
+    </div>
+    <div class="work__grid">
+
+      <div class="work-card" data-category="design"
+        data-title="Business Website"
+        data-desc="Custom web design & development — built for performance and brand impact."
+        data-img="https://lordayoyinka.github.io/img/portfolio-1.png">
+        <div class="work-card__preview">
+          <img src="https://lordayoyinka.github.io/img/portfolio-1.png" alt="Business Website" loading="lazy" />
+          <div class="work-card__overlay"><span class="work-card__view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Preview
+          </span></div>
+        </div>
+        <div class="work-card__info"><div><h4>Business Website</h4><p class="work-card__desc">Custom web design &amp; development</p></div><span class="work-card__cat">Design</span></div>
       </div>
-      <div class="work__grid">
-        <div class="work-card" data-category="design">
-          <div class="work-card__preview">
-            <img src="https://lordayoyinka.github.io/img/portfolio-1.png" alt="Business Website" loading="lazy" />
-            <div class="work-card__overlay"><span class="work-card__view">View Project</span></div>
-          </div>
-          <div class="work-card__info"><div><h4>Business Website</h4><p class="work-card__desc">Custom web design &amp; development</p></div><span class="work-card__cat">Design</span></div>
+
+      <div class="work-card" data-category="design"
+        data-title="News Website"
+        data-desc="A fast, clean news site with dynamic content layout and mobile-first design."
+        data-img="https://lordayoyinka.github.io/img/portfolio-2.png">
+        <div class="work-card__preview">
+          <img src="https://lordayoyinka.github.io/img/portfolio-2.png" alt="News Website" loading="lazy" />
+          <div class="work-card__overlay"><span class="work-card__view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Preview
+          </span></div>
         </div>
-        <div class="work-card" data-category="design">
-          <div class="work-card__preview">
-            <img src="https://lordayoyinka.github.io/img/portfolio-2.png" alt="Landing Page" loading="lazy" />
-            <div class="work-card__overlay"><span class="work-card__view">View Project</span></div>
-          </div>
-          <div class="work-card__info"><div><h4>News Website </h4><p class="work-card__desc">Conversion-focused design</p></div><span class="work-card__cat">Design</span></div>
+        <div class="work-card__info"><div><h4>News Website</h4><p class="work-card__desc">Conversion-focused design</p></div><span class="work-card__cat">Design</span></div>
+      </div>
+
+      <div class="work-card" data-category="solutions"
+        data-title="Solar & Inverter System Installation"
+        data-desc="Professional solar & inverter system installation — reliable, cost-effective energy for homes and businesses."
+        data-img="/Battery.jpeg">
+        <div class="work-card__preview">
+          <img src="/Battery.jpeg" alt="Solar & Inverter System Installation" loading="lazy"
+            onerror="this.src='https://lordayoyinka.github.io/img/portfolio-3.png'" />
+          <div class="work-card__overlay"><span class="work-card__view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Preview
+          </span></div>
         </div>
-        <div class="work-card" data-category="solutions">
-          <div class="work-card__preview">
-            <img src="/Battery.jpeg" alt="Project Preview">" alt="Construction Website " loading="lazy" />
-            <div class="work-card__overlay"><span class="work-card__view">View Project</span></div>
-          </div>
-          <div class="work-card__info"><div><h4>Solar & Inverter System installation </h4><p class="work-card__desc">Solar & Inverter System installation </p></div><span class="work-card__cat">Solutions</span></div>
+        <div class="work-card__info"><div><h4>Solar &amp; Inverter Installation</h4><p class="work-card__desc">Solar &amp; Inverter System installation</p></div><span class="work-card__cat">Solutions</span></div>
+      </div>
+
+      <div class="work-card" data-category="design"
+        data-title="Corporate Website"
+        data-desc="Multi-page corporate website — professional, clean, and optimised for lead generation."
+        data-img="https://lordayoyinka.github.io/img/portfolio-4.png">
+        <div class="work-card__preview">
+          <img src="https://lordayoyinka.github.io/img/portfolio-4.png" alt="Corporate Website" loading="lazy" />
+          <div class="work-card__overlay"><span class="work-card__view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Preview
+          </span></div>
         </div>
-        <div class="work-card" data-category="design">
-          <div class="work-card__preview">
-            <img src="https://lordayoyinka.github.io/img/portfolio-4.png" alt="Corporate Website" loading="lazy" />
-            <div class="work-card__overlay"><span class="work-card__view">View Project</span></div>
-          </div>
-          <div class="work-card__info"><div><h4>Corporate Website</h4><p class="work-card__desc">Multi-page corporate site</p></div><span class="work-card__cat">Design</span></div>
+        <div class="work-card__info"><div><h4>Corporate Website</h4><p class="work-card__desc">Multi-page corporate site</p></div><span class="work-card__cat">Design</span></div>
+      </div>
+
+      <div class="work-card" data-category="solutions"
+        data-title="Solar Panels Installation"
+        data-desc="Full rooftop solar panels installation — sustainable, professionally fitted, and built to last."
+        data-img="/Solar.jpeg">
+        <div class="work-card__preview">
+          <img src="/Solar.jpeg" alt="Solar Panels Installation" loading="lazy"
+            onerror="this.src='https://lordayoyinka.github.io/img/portfolio-5.png'" />
+          <div class="work-card__overlay"><span class="work-card__view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Preview
+          </span></div>
         </div>
-        <div class="work-card" data-category="solutions">
-          <div class="work-card__preview">
-            <img src="/Solar.jpeg" alt="Solar Panels Installation" loading="lazy" />
-            <div class="work-card__overlay"><span class="work-card__view">View Project</span></div>
-          </div>
-          <div class="work-card__info"><div><h4>Solar Panels Installation</h4><p class="work-card__desc">Solar Panels Installation</p></div><span class="work-card__cat">Solutions</span></div>
+        <div class="work-card__info"><div><h4>Solar Panels Installation</h4><p class="work-card__desc">Solar panels installation</p></div><span class="work-card__cat">Solutions</span></div>
+      </div>
+
+      <div class="work-card" data-category="design"
+        data-title="Blog & Content Site"
+        data-desc="WordPress blog with a custom theme — designed for readability, SEO, and engagement."
+        data-img="https://lordayoyinka.github.io/img/portfolio-6.png">
+        <div class="work-card__preview">
+          <img src="https://lordayoyinka.github.io/img/portfolio-6.png" alt="Blog Site" loading="lazy" />
+          <div class="work-card__overlay"><span class="work-card__view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Preview
+          </span></div>
         </div>
-        <div class="work-card" data-category="design">
-          <div class="work-card__preview">
-            <img src="https://lordayoyinka.github.io/img/portfolio-6.png" alt="Blog Site" loading="lazy" />
-            <div class="work-card__overlay"><span class="work-card__view">View Project</span></div>
-          </div>
-          <div class="work-card__info"><div><h4>Blog &amp; Content Site</h4><p class="work-card__desc">WordPress blog with custom theme</p></div><span class="work-card__cat">Design</span></div>
+        <div class="work-card__info"><div><h4>Blog &amp; Content Site</h4><p class="work-card__desc">WordPress blog with custom theme</p></div><span class="work-card__cat">Design</span></div>
+      </div>
+
+      <div class="work-card" data-category="solutions"
+        data-title="Networking Infrastructure"
+        data-desc="End-to-end networking infrastructure — mast, cabling, access points and point-to-point links."
+        data-img="/Mast.jpeg">
+        <div class="work-card__preview">
+          <img src="/Mast.jpeg" alt="Networking Infrastructure" loading="lazy"
+            onerror="this.src='https://lordayoyinka.github.io/img/portfolio-7.png'" />
+          <div class="work-card__overlay"><span class="work-card__view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Preview
+          </span></div>
         </div>
-        <div class="work-card" data-category="solutions">
-          <div class="work-card__preview">
-            <img src="/Mast.jpeg" alt="Networking infrastructure " loading="lazy" />
-            <div class="work-card__overlay"><span class="work-card__view">View Project</span></div>
-          </div>
-          <div class="work-card__info"><div><h4>Networking infrastructure</h4><p class="work-card__desc">Networking infrastructure</p></div><span class="work-card__cat">Solutions</span></div>
+        <div class="work-card__info"><div><h4>Networking Infrastructure</h4><p class="work-card__desc">Networking infrastructure setup</p></div><span class="work-card__cat">Solutions</span></div>
+      </div>
+
+      <div class="work-card" data-category="graphics"
+        data-title="Business Card Designs"
+        data-desc="Creative, print-ready business card designs — professional branding that makes a lasting impression."
+        data-img="https://lordayoyinka.github.io/img/portfolio-8.jpg">
+        <div class="work-card__preview">
+          <img src="https://lordayoyinka.github.io/img/portfolio-8.jpg" alt="Business Card Designs" loading="lazy" />
+          <div class="work-card__overlay"><span class="work-card__view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Preview
+          </span></div>
         </div>
-        <div class="work-card" data-category="graphics">
-          <div class="work-card__preview">
-            <img src="https://lordayoyinka.github.io/img/portfolio-8.jpg" alt="Business cards printing" loading="lazy" />
-            <div class="work-card__overlay"><span class="work-card__view">View Project</span></div>
-          </div>
-          <div class="work-card__info"><div><h4>Business cards designs</h4><p class="work-card__desc">Business cards printing</p></div><span class="work-card__cat">Design</span></div>
-        </div>
+        <div class="work-card__info"><div><h4>Business Card Designs</h4><p class="work-card__desc">Business cards printing</p></div><span class="work-card__cat">Graphics</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project Preview">
+  <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+  <div class="lightbox__container">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lightbox__inner">
+      <div class="lightbox__img-wrap">
+        <div class="lightbox__loader" id="lightboxLoader"></div>
+        <img src="" alt="" class="lightbox__img" id="lightboxImg" />
+      </div>
+      <div class="lightbox__info">
+        <span class="lightbox__counter" id="lightboxCounter"></span>
+        <h3 class="lightbox__title" id="lightboxTitle"></h3>
+        <p class="lightbox__desc" id="lightboxDesc"></p>
+        <a href="#contact" class="btn btn--primary lightbox__cta" id="lightboxCta">
+          Hire Me for a Similar Project
+        </a>
       </div>
     </div>
-  </section>
+    <div class="lightbox__thumbs" id="lightboxThumbs"></div>
+  </div>
+</div>
 
   <!-- PROCESS -->
   <section class="process section" id="process">
